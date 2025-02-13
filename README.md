@@ -39,7 +39,7 @@ leaning docker 101
 
 # Flags
 
-## docker run Flags
+## `docker run` Flags
 
 - `-d` : Run the container in detached mode (in the background).
 - `-it`: Run the container interactively with a terminal
@@ -53,9 +53,31 @@ leaning docker 101
 - `--network <network-name>` : Connects the container to a specific Docker network.
 - `--entrypoint "/bin/bash"` : Overrides the default entrypoint of the container.
 
-## docker build Flags
+## `docker build` Flags
 
 - `-t <image-name>:latest`: Tags the image with a name (`image-name`) and optional tag (`latest`).
 - `-f Dockerfile.custom`: Specifies a custom Dockerfile instead of the default Dockerfile.
 - `--no-cache`: Builds the image without using cache layers.
 - `--build-arg VAR=value`: Passes build arguments to the Dockerfile.
+
+## `docker ps` Flags
+
+- `-a`: Shows all containers, including stopped ones.
+- `-q`: Displays only container IDs.
+- `--format "{{.Names}}"`: Customizes the output format .
+
+## `docker exec` Flags
+
+- `-it`: Runs an interactive command inside the container.
+- `-u <user>`: Runs the command as a specific user.
+
+## `docker logs` Flags
+
+- `-f`: Follows the logs in real-time.
+- `--tail 100`: Shows the last 100 lines of logs.
+
+## `docker compose` Flags
+
+- `-f docker-compose.yml`: Specifies a Compose file.
+- `-d`: Runs services in detached mode.
+- `--build`: Forces a rebuild of the images before starting the services.
