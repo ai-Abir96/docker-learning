@@ -42,19 +42,20 @@ leaning docker 101
 ## docker run Flags
 
 - `-d` : Run the container in detached mode (in the background).
-
-- `-it`: Run the container interactively with a terminal (-i keeps STDIN open, -t allocates a pseudo-TTY).
-
+- `-it`: Run the container interactively with a terminal
+  - `-i` (interactive): Keeps STDIN open even if not attached.
+  - `-t` (tty): Allocates a pseudo-TTY, which provides an interactive terminal session.
 - `--name <container-name>`: Assigns a name to the container.
-
 - `-p <host-port>:<container-port>` : Maps port on the host to a port in the container.
-
 - `-v /host/path:/container/path` : Mounts a volume from the host to the container.
-
 - `--rm` : Automatically removes the container when it stops.
-
 - `--env VAR=value (-e VAR=value)` : Sets an environment variable inside the container.
-
 - `--network <network-name>` : Connects the container to a specific Docker network.
-
 - `--entrypoint "/bin/bash"` : Overrides the default entrypoint of the container.
+
+## docker build Flags
+
+- `-t <image-name>:latest`: Tags the image with a name (`image-name`) and optional tag (`latest`).
+- `-f Dockerfile.custom`: Specifies a custom Dockerfile instead of the default Dockerfile.
+- `--no-cache`: Builds the image without using cache layers.
+- `--build-arg VAR=value`: Passes build arguments to the Dockerfile.
